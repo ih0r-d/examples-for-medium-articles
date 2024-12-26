@@ -40,6 +40,50 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>kubernetes-annotations</artifactId>
+            <version>4.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>dekorate-spring-boot</artifactId>
+            <version>4.1.4</version>
+        </dependency>
+
+        <!--Transitive dependencies to fix vulnerability (GHSA-w33c-445m-f8w7) of io.dekorate:dekorate-spring-boot:4.1.4-->
+        <!-- GHSA-w33c-445m-f8w7 (5.9) Transitive Okio Signed to Unsigned Conversion Error vulnerability -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.27.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.5.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>3.9.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>docker-annotations</artifactId>
+            <version>4.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>helm-annotations</artifactId>
+            <version>4.1.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -48,6 +92,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
         </plugins>
     </build>
 
